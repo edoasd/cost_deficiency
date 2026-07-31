@@ -1,5 +1,37 @@
 \section{Introduction}\label{section: introduction}
 
+Let $G$ be a countable group and let $X$ be a probability space on which $G$ acts by measurable transformations, endowed with a $G$-invariant probability measure $\mu$. One says that $G$ acts by probability-measure preserving (p.m.p.) transformations on $(X,\mu)$.
+
+The \emph{cost} of a countable group $G$ is $\frac{1}{2}\inf_{\mathcal{G}}\{\E_{\mathcal{G}}(\deg(e_G))\}$, where the infimum ranges over all $G$-invariant connected graphs $\mathcal{G}$ with vertex set $G$, and where $\E_{\mathcal{G}}(\deg(e_G))$ is the expected number of edges in $\mathcal{G}$ that have $e_G$ as an endpoint. 
+
+The sofic dimension of a p.m.p. action...
+
+\begin{defn}
+	Let $G$ be a finitely generated residually finite group.
+	\begin{itemize}
+	\item The \emph{absolute rank gradient} of $G$ is
+	 \begin{equation}
+		\rg_{\mathrm{abs}}(G)\coloneqq \inf\left\{\frac{d(H)-1}{[G:H]}  : H\leqslant G \text{ with }[G:H]<\infty \right\},
+	\end{equation}
+	where $d(H)$ denotes the smallest size of a generating set for the group $H$.
+	\item The \emph{absolute subgroup growth gradient} of $G$ is	
+	 \begin{equation}
+	\sgg_{\mathrm{abs}}(G)\coloneqq \inf\left\{\frac{1}{[G:H]}\limsup_{d\to \infty}\frac{\log(s_H(d))}{d\log(d)}  : H\leqslant G \text{ with }[G:H]<\infty \right\},
+\end{equation}
+where $s_H(d)\coloneqq \left|\left\{K\leqslant H: [H:K]\le d\right\}\right|$, $d\ge 1$, is the subgroup growth function of the group $H$.
+	\end{itemize}
+\end{defn}
+
+The inequalities
+
+\begin{equation}
+	\beta_1^{(2)}(G)\le \mathrm{cost}(G)-1\le \rg_{\mathrm{abs}}(G),
+\end{equation}
+and
+\begin{equation}
+	\sgg_{\mathrm{abs}}(G)\le s(G,\widehat{G})-1\le \rg_{\mathrm{abs}}(G)
+\end{equation}
+always hold. There are no known examples of groups where they are strict. Our main theorem asserts that on a random group of deficiency at least $2$, these inequalities are equalities with probability tending to $1$.
 \begin{thm}
 Let $G$ be a random group in the few relators model with $n\ge 3$ generators and $m\ge 0$ relations. Suppose that $m\le n-2$. Then with asymptotic probability $1$ we have
 \[

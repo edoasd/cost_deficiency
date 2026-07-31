@@ -6,3 +6,17 @@
 
 
 \subsection{The few relators model for a random group}
+
+
+\begin{defn} Let $n>m\ge 1$. Let $F_n$ be the free group of rank $n$ with free basis $\{x_1,\ldots,x_n\}$ and let $(r_1,\ldots, r_m)$ be an $m$-tuple of cyclically reduced words on $F_n$. Let $\phi:F_n\to \Z$ be a homomorphism. The pair $((r_1,\ldots, r_m),\phi)$ satisfies the \emph{minimum condition} if, possibly after renaming the generators $\{x_1,\ldots, x_n\}$, for each $j=1,\ldots,m$ it holds that $\phi(r_j)=0$ and that the lower section $L_{\phi}(r_j)$ consists of 
+	\begin{itemize}
+	\item either exactly one vertex, whose two adjacent edges are labeled by $x_i^{\pm 1}$ and $x_n^{\pm 1}$, or
+	\item exactly one edge, labeled by $x_i^{\pm 1}$, whose adjacent edges are labeled by $x_n^{\pm 1}$.
+	\end{itemize}
+	The pair $((r_1,\ldots, r_m),\phi)$ satisfies a \emph{minimum condition} if there exists $\phi:F_n\to \Z$ such that, in addition to the above, satisfies $\phi(x_i)\ge 0$ for each $1\le i< n$ and $\phi(x_n)<0$.
+\end{defn}
+
+
+\begin{prop}[{\cite[Proposition 5.3]{KielakKrophollerWilkes2022}}]
+	A random group in the few relators model with $n\ge 3$ generators and $m\le n-2$ relators satisfies a standard minimum condition with asymptotic probability $1$.
+\end{prop}
