@@ -1,0 +1,137 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[french,english]{babel}
+\usepackage{geometry} 
+%\geometry{a4paper}
+
+\geometry{%
+	a4paper,                % format de papier
+	% Définition des marges :
+	left= 3cm,            % marge intérieure à la page
+	right = 3cm,          % marge extérieure
+	top = 3cm,
+	bottom = 3cm,
+	% En-tête et pied de page :
+	headheight=6mm,         % espace réservé à l'en-tête dans la marge top
+	headsep=9mm,            % espace entre le corps et l'en-tête
+	footskip=9mm            % espace entre le corps et le pied de page
+}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption} 
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhf{}
+%\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[RO,RE]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}}
+\newcommand*{\img}[1]{%
+	\raisebox{-.0\baselineskip}{%
+		\includegraphics[
+		height=\baselineskip,
+		width=\baselineskip,
+		keepaspectratio,
+		]{#1}%
+	}%
+}
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
+\usepackage{comment} 
+\usepackage{diagbox}
+\usepackage{xcolor}
+\usepackage{epigraph}
+
+\usepackage[noadjust]{cite}
+\usepackage[
+pagebackref=true,
+colorlinks=true,
+urlcolor=purple,
+linkcolor=purple!87!black,
+citecolor=green!60!black,
+pdfborder={0 0 0}
+]{hyperref}
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{[{\tiny%
+		\ifcase #1 Not cited.%
+		\or Cited on page~#2.%
+		\else Cited on pages #2.%
+		\fi%
+	}]}
+\usepackage{cleveref}
+\newcommand{\crefrangeconjunction}{--}
+\newcommand\pcref[1]{(\cref{#1})}
+\newcommand{\prange}[2]{(\labelcref{#1})--(\labelcref{#2})}
+\usepackage{bookmark}
+\usepackage{dsfont}
+\newcommand{\id}{\mathsf{id}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue!60!black}{#1}}
+\newcommand{\cay}[2]{\mathrm{Cay}(#1,#2)}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Max}[1]{\mathrm{Max}(#1)}
+\newcommand{\Min}[1]{\mathrm{Min}(#1)}
+\newcommand{\gr}[1]{\mathrm{gr}(#1)}
+\newcommand{\supp}[1]{\mathrm{supp}(#1)}
+\newcommand{\hceil}[1]{\Big\lceil #1 \Big\rceil}
+\newcommand{\hfloor}[1]{\Big\lfloor #1 \Big\rfloor}
+\usepackage{tikz}
+\usetikzlibrary{patterns,positioning,arrows,decorations.markings,calc,decorations.pathmorphing,decorations.pathreplacing}
+\usetikzlibrary{fadings}
+\usepackage{forest}
+\usepackage{tikz-qtree}
+\RequirePackage{pgffor} 
+\makeatletter
+\newcommand{\neutralize}[1]{\expandafter\let\csname c@#1\endcsname\count@}
+\makeatother
+
+\newenvironment{questionbis}[1]
+{\addtocounter{thm}{-1}
+	\renewcommand{\thethm}{\ref*{#1}$'$}%
+	\neutralize{question}\phantomsection
+	\begin{question}}
+	{\end{question}}
+
+\newcommand{\thistheoremname}{}
+
+\newtheorem*{genericthm*}{\thistheoremname}
+\newenvironment{namedthm*}[1]
+{\renewcommand{\thistheoremname}{#1}%
+	\begin{genericthm*}}
+	{\end{genericthm*}}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section] % reset theorem numbering for each chapter
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{question}[thm]{Question}
+\theoremstyle{definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{conjecture}[thm]{Conjecture}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{condition}{Condition}
